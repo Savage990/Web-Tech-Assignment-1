@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Quiz on CSS</title>
+<style>
+	body {
+		font-family: Arial, sans-serif;
+		margin: 0;
+		padding: 20px;
+		background-color: rgb(225, 70, 88);
+	}
+	
+	.container {
+		max-width: 800px;
+		margin: 0 auto;
+		background-color: rgba(255, 255, 255, 0.8);
+		padding: 20px;
+		border-radius: 8px;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	}
+	
+	h1 {
+		text-align: center;
+	}
+	
+	.question {
+		margin-bottom: 10px;
+	}
+	
+	.answer {
+		margin-left: 20px;
+	}
+	
+	button {
+		display: block;
+		margin: 20px auto;
+		padding: 10px 20px;
+		background-color: #007bff;
+		color: #fff;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+		transition: background-color 0.3s;
+	}
+	
+	button:hover {
+		background-color: #0056b3;
+	}
+	
+	#score {
+		margin-top: 20px;
+		padding: 20px;
+		background-color: #f0f0f0;
+		border-radius: 8px;
+	}
+	</style>
+</head>
+<body>
+<div class="container">
+	<h1>QUIZ</h1>
+	<div class="question">
+Q1.Which CSS property determines how much the text should be emblazoned?<br>
+<input type="radio" name="question1" id="correct1">Font-Weight <br>
+<input type="radio" name="question1">Font-Size <br>
+<input type="radio" name="question1">Font-Family <br>
+<input type="radio" name="question1">Font-Style<br>
+<br>
+Q2.Which of the following CSS selectors are used to specify a group of elements?<br>
+<input type="radio" name="question2" >tag<br>
+<input type="radio" name="question2"> id<br>
+<input type="radio" name="question2" id="correct2">class<br>
+<input type="radio" name="question2">both class and tag<br>
+<br>
+Q3.Which of the following CSS framework is used to create a responsive design?<br>
+<input type="radio" name="question3" >django <br>
+<input type="radio" name="question3"id="correct3">bootstrap<br>
+<input type="radio" name="question3">larawell<br>
+<input type="radio" name="question3">rails<br>
+<br>
+Q4.Which of the following CSS property is used to make the text bold? <br>
+<input type="radio" name="question4" >text-decoration: bold<br>
+<input type="radio" name="question4">font-style: bold<br>
+<input type="radio" name="question4" id="correct4">font-weight: bold<br>
+<input type="radio" name="question4"> text-align: bold<br>
+<br>
+Q5.Which of the following function defines a linear gradient as a CSS image?<br>
+<input type="radio" name="question5" id="correct5">linear-gradient() <br>
+<input type="radio" name="question5">gradient()<br>
+<input type="radio" name="question5"> grayscale()<br>
+<input type="radio" name="question5">image()<br>
+<br>
+Q6.Which of the following is the correct way to apply CSS Styles?<br>
+<input type="radio" name="question6" >  in an external CSS file<br>
+<input type="radio" name="question6">inside an HTML element<br>
+<input type="radio" name="question6"> inside the < head > section of an HTML page<br>
+<input type="radio" name="question6"id="correct6">all of the mentioned<br>
+<br>
+Q7.Which of the following is not the property of the CSS box model?<br>
+<input type="radio" name="question7" id="correct7">color <br>
+<input type="radio" name="question7">margin<br>
+<input type="radio" name="question7">width <br>
+<input type="radio" name="question7">height<br>
+<br>
+Q8.Which of the following CSS Property sets the stacking order of positioned elements?<br>
+<input type="radio" name="question8" >y-index<br>
+<input type="radio" name="question8">x-index<br>
+<input type="radio" name="question8">w-index<br>
+<input type="radio" name="question8"id="correct8">z-index<br>
+<br>
+Q9.What are the uses of CSS pseudo-elements? <br>
+<input type="radio" name="question9" >Style specified parts of an element<br>
+<input type="radio" name="question9">Style the first letter or line of an element<br>
+<input type="radio" name="question9">Insert content before or ahter the element<br>
+<input type="radio" name="question9" id="correct9">All of the above<br>
+<br>
+Q10.Which of the following are types of length units in CSS?<br>
+<input type="radio" name="question10">Absolute<br>
+<input type="radio" name="question10">Relative <br>
+<input type="radio" name="question10" id="correct10">Both A and B <br>
+<input type="radio" name="question10">None of the above<br>
+<br>
+<input type="button" value="Submit Quiz" onclick="result()">
+<div id="score"></div>
+
+<script>
+function result() {
+  var score = 0;
+  var answers = ["correct1", "correct2", "correct3", "correct4", "correct5", "correct6", "correct7", "correct8", "correct9", "correct10"];
+  var explanations = [
+    "The correct answer is Font-Weight.",
+    "The correct answer is class.",
+    "The correct answer is Bootstrap.",
+    "The correct answer is font-weight: bold.",
+    "The correct answer is linear-gradient().",
+    "The correct answer is all of the mentioned.",
+    "The correct answer is color.",
+    "The correct answer is z-index.",
+    "The correct answer is All of the above.",
+    "The correct answer is Both A and B."
+  ];
+
+  for (var i = 0; i < answers.length; i++) {
+    if (document.getElementById(answers[i]).checked) {
+      score++;
+    }
+  }
+
+  var resultText = "Your score is: " + score + "<br><br>";
+  for (var i = 0; i < answers.length; i++) {
+    resultText += "Q" + (i + 1) + ": ";
+    resultText += explanations[i] + "<br>";
+  }
+
+  var scoreDiv = document.getElementById("score");
+  scoreDiv.innerHTML = resultText;
+}
+</script>
+
+</body>
+</html>
